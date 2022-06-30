@@ -107,7 +107,6 @@ const musicStore = new HYEventStore({
             break
           }
         }
-
       })
 
       // 播放结束，播放下一首
@@ -127,7 +126,6 @@ const musicStore = new HYEventStore({
       innerAudioContext.onStop(()=>{
         ctx.isPlay = false
         ctx.playingName = 'resume'
-        innerAudioContext.stop()
       })
       
 

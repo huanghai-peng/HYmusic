@@ -83,7 +83,7 @@ Page({
 
     // 歌词切换
     musicStore.onStates(["lyricText", "currentIndex"], ({ lyricText, currentIndex }) => {
-      if (lyricText) {
+      if (lyricText != undefined) {
         this.setData({ lyricText })
       }
       if (currentIndex != undefined) {
