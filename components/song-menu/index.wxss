@@ -1,0 +1,24 @@
+/* components/song-menu/index.wxss */
+.menu-list {
+  position: relative;
+  left: -20rpx;
+  width: 100vw;
+  white-space: nowrap;
+}
+.menu-item {
+  display: inline-block;
+  width: 220rpx;
+  margin-left: 20rpx;
+  vertical-align: top;
+}
+
+.menu-item:last-child {
+  margin-right: 20rpx;
+}
+
+::-webkit-scrollbar {
+  display:none;
+  width:0;
+  height:0;
+  color:transparent;
+}

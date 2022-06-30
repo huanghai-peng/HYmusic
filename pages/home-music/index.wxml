@@ -1,0 +1,47 @@
+<!--pages/home-music/index.wxml-->
+<van-search background="#fafafa"
+           class="home-search"
+          shape="round"
+           placeholder="搜索你喜欢的歌曲" 
+           disabled bind:click-input="handleHomeSearchClick"
+/>
+
+<!-- 轮播图 -->
+<swiper class="home-swiper"
+        indicator-dots
+        indicator-color="#fff" 	
+        indicator-active-color="#ffc0cb"
+        circular
+        autoplay
+        style="height: {{swiperHeight}}px"
+>
+  <block wx:for="{{banners}}" wx:key="bannerId">
+    <swiper-item class="home-swiper-item">
+      <image src="{{item.pic}}" class="images" id="swiperImages" mode="widthFix" bindload="handleHomeImageLoad" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 热门歌单/推荐歌单 -->
+<song-menu title="热门歌单" menuList="{{hotMemu}}"></song-menu>
+<song-menu title="推荐歌单" menuList="{{recommendMenu}}"></song-menu>
+
+<!-- music-bottom-bar -->
+<view wx:if="{{id != '0'}}" style="height: 44px"></view>
+<view class="music-bottom-bar" wx:if="{{id != '0'}}" bindtap="handleAvatarItem">
+  <view class="left">
+    <image src="/assets/images/music/avatar.jpg"
+           mode="aspectFit"
+           class="avatar" 
+           
+           style="animation-play-state: {{isPlay ?  'running' : 'paused' }};"
+    >
+    </image>
+    <view class="name">哈哈哈</view>
+  </view>
+  <view class="right">
+    <image src="/assets/images/music/{{isPlay ? 'pause' : 'play'}}_icon.png" mode="aspectFit" class="play-icon" catchtap="handlePlayItem"></image>
+    <image src="/assets/images/music/playlist_icon.png" mode="aspectFit" class="playlist-icon"></image>
+  </view>
+</view>
+

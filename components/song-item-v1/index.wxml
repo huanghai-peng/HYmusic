@@ -1,0 +1,11 @@
+<!--components/song-item-v1/index.wxml-->
+<view class="song-item">
+  <view class="index">{{index}}</view>
+  <view class="info">
+    <view class="name">{{item.name}}</view>
+    <image src="/assets/images/icons/sq_icon.png" mode="widthFix" class="image" />
+    <text class="author">{{item.artists[0].name}}</text>
+    <text class="dian" wx:if="{{item.alias.length}}">·</text>
+    <text wx:if="{{item.alias.length}}" class="alias">{{item.alias[0]}}</text>
+  </view>
+</view>

@@ -1,0 +1,75 @@
+/* packageDetail/pages/detail-search/index.wxss */
+page {
+  padding: 0 20rpx;
+  padding-top: 54px;
+}
+
+.van-search {
+  padding: 10px 0 !important;
+}
+
+.detail-search {
+  position: fixed;
+  top: 0;
+  left: 20rpx;
+  right: 20rpx;
+}
+
+.detail-search .van-search__content {
+  background-color: #fff;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36rpx;
+  margin-bottom: 20rpx;
+}
+
+.hot-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 10rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  margin: 0 20rpx 20rpx 0;
+  border-radius: 8rpx;
+}
+
+.hot-list .tag:first-child {
+  color: #26CE8A;
+}
+
+
+
+/* 搜索建议 */
+
+.search-title {
+  color: #26CE8A;
+  font-weight: 700;
+  margin-bottom: 20rpx;
+}
+
+.suggest-list {
+  position: relative;
+  left: -20rpx;
+  width: 100vw;
+
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.item .icon {
+  width: 60rpx;
+}
+
+.songs-title {
+  margin-bottom: 30rpx;
+  color: #26CE8A;
+}

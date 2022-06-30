@@ -1,0 +1,30 @@
+// 处理一下播放量
+function formatCount(count){
+    count = parseInt(count)
+    if(count > 100000000) {
+      return (count / 100000000).toFixed(1) + '亿'  
+    }else if(count > 10000) {
+      return (count / 10000).toFixed(1) + '万'  
+    }else{
+      return count
+    }
+}
+
+// 处理一下零
+function padLeftZero(option){
+  option = option.toString()
+  return ("00" + option).slice(option.length)
+}
+
+// 处理时间
+function formatTime(time){
+  time = parseInt(time) / 1000
+  var d = Math.floor( time / 60)
+  var s = Math.floor( time % 60)
+  return padLeftZero(d) + ":" + padLeftZero(s)
+}
+
+module.exports = {
+  formatCount: formatCount,
+  formatTime:formatTime
+}

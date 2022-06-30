@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "song-menu" : "/components/song-menu/index"
+  }
+}

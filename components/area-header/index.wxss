@@ -1,0 +1,32 @@
+/* components/area-header/index.wxss */
+.area-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 36rpx;
+}
+
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.more {
+  font-size: 28rpx;
+  color: #777;
+}
+
+.right-more .slot:empty + .default {
+  display: flex;
+}
+
+.default {
+  display: none;
+  align-items: center;
+}
+

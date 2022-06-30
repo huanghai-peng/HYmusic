@@ -1,0 +1,20 @@
+<!--components/nav-bar/index.wxml-->
+<view class="nav">
+  <view class="left" bindtap="handleLeftClick">
+    <view class="left-slot">
+      <slot name="left"></slot>
+    </view>
+    <view class="left-arrow">
+      <image class="image" src="/assets/images/icons/arrow-left.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="center">
+    <view class="center-slot">
+      <slot name="center"></slot>
+    </view>
+    <view class="content">
+      {{content}}
+    </view>
+  </view>
+  <view class="right">3</view>
+</view>

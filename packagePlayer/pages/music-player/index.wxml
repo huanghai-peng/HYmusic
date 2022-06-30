@@ -1,0 +1,67 @@
+<!--packagePlayer/pages/music-player/index.wxml-->
+<wxs src="../../../utils/format.wxs" module="format"></wxs>
+<!-- 状态栏 -->
+<view class="status-bar" style="height: {{statusBarHeight}}px"></view>
+<!-- 导航栏 -->
+<nav-bar bind:leftClick="handleLeftClick">
+  <view slot="center" class="center">
+    <view class="{{isActive == 0 ? 'active' : ''}}" bindtap="handleActiveClick" data-index="0">歌曲</view>
+    <view class="separate">|</view>
+    <view class="{{isActive == 1 ? 'active' : ''}}" bindtap="handleActiveClick" data-index="1">歌词</view>
+  </view>
+</nav-bar>
+
+<swiper style="height:{{swiperHeight}}px" current="{{isActive}}" bindchange="handleSwiperChange" class="content" >
+  <swiper-item class="music">
+    <view class="album">
+      <image class="image" mode="widthFix" src="/packagePlayer/assets/images/player/avatar.jpg"></image>
+    </view>
+    <view class="info">
+      <view class="title">黄大鹏</view>
+      <view class="subtitle">
+        <view class="singer">我的爱人</view>
+        <view class="alias">专辑: 哈哈哈</view>
+      </view>
+    </view>
+    <view class="lyric" wx:if="{{lyricShow}}" >{{lyricText}}</view>
+    <view class="progress">
+      <slider class="slider" 
+              block-size="{{12}}"
+              value="{{sliderValue}}"
+              bindchange="handleSlideChange"
+              bindchanging="handleSlideChanging"
+      >
+      </slider>
+      <view class="time">
+        <view class="current">{{format.formatTime(currentTime)}}</view>
+        <view class="duration">{{format.formatTime(duration)}}</view>
+      </view>
+    </view>
+    <view class="operation">
+      <image class="btn btn-mode" 
+             src="/packagePlayer/assets/images/player/play_{{playModeName}}.png"
+             bindtap="handlePlayModelClick"></image>
+      <image class="btn btn-prev" 
+             src="/packagePlayer/assets/images/player/play_prev.png"
+             bindtap="handlePrevMusic"></image>
+      <image class="btn btn-pause" 
+             src="/packagePlayer/assets/images/player/play_{{isPlay ? 'pause' : 'resume'}}.png"
+             bindtap="handlePlayingNameClick"></image>
+      <image class="btn btn-next" 
+             src="/packagePlayer/assets/images/player/play_next.png"
+             bindtap="handleNextMusic"
+             ></image>
+      <image class="btn btn-music" src="/packagePlayer/assets/images/player/play_music.png"></image>
+    </view>
+  </swiper-item>
+
+
+  <swiper-item class="lyric">
+    <scroll-view class="lyric-scroll-view" scroll-y scroll-top="{{currentIndex * 35}}" scroll-with-animation>
+      <block wx:for="{{lyricInfo}}" wx:key="index">
+        <view class="lyric-text {{currentIndex == index ? 'lyric-active':''}}"
+               style="margin-top:{{ index == 0 ? (swiperHeight / 2 - 80) : 0}}px; margin-bottom: {{index == lyricInfo.length-1 ? (swiperHeight / 2 + 80) : 0}}px;">{{item.text}}</view>
+      </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>

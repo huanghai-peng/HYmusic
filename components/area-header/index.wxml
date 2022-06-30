@@ -1,0 +1,13 @@
+<!--components/area-header/index.wxml-->
+<view class="area-header">
+  <view class="title">{{title}}</view>
+  <view class="right-more" wx:if="{{isShowRight}}">
+    <view class="slot">
+      <slot></slot>
+    </view>
+    <view class="default">
+      <text class="more">{{rightMore}}</text>
+      <image src="/assets/images/icons/arrow-right.png" mode="widthFix" class="icon" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,31 @@
+/* components/song-item-v1/index.wxss */
+.song-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.index {
+  margin-right: 30rpx;
+  font-size: 26rpx;
+}
+
+.name {
+  font-size: 30rpx;
+}
+
+.author,
+.dian,
+.alias {
+  color: #666666;
+  font-size: 24rpx;
+}
+.dian {
+  margin: 0 10rpx;
+}
+
+.image {
+  width: 38rpx;
+  height: 22rpx;
+  margin-right: 10rpx;
+}
